@@ -8,6 +8,8 @@ import config from "../../../content/site.config.json";
 import Quote from "@/components/Quote";
 import InlineImage from "@/components/InlineImage";
 
+export const runtime = "edge";
+
 const components = {
   Quote: Quote,
   InlineImage: InlineImage,

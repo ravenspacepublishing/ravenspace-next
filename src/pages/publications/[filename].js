@@ -8,6 +8,8 @@ import PubSlides from "@/components/PubSlides";
 import React from "react";
 import config from "../../../content/site.config.json";
 
+export const runtime = "edge";
+
 const LinkWrapper = ({ link, children }) => {
   return link ? (
     <Link href={link} target="_blank" rel="noopener noreferrer">
