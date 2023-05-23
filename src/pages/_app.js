@@ -171,12 +171,21 @@ export default function App({ Component, pageProps }) {
             >
               {config.theme.footer.copyright}
             </span>
-            <Link
-              className="text-white hover:underline"
-              href="/privacy-statement"
-            >
-              Privacy Statement
-            </Link>
+            <div>
+              <Link
+                className="text-white hover:underline"
+                href="/privacy-statement"
+              >
+                Privacy Statement
+              </Link>
+              <span> | </span>
+              <Link
+                className="text-white hover:underline"
+                href="/admin/index.html"
+              >
+                Admin
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
