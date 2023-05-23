@@ -646,6 +646,13 @@ export default defineConfig({
         label: "News Posts",
         name: "posts",
         path: "content/news-posts",
+        defaultItem: () => {
+          return {
+            // When a new post is created the title field will be set to "New post"
+            title: "New Post",
+            draft: true,
+          };
+        },
         ui: {
           router: ({ document }) => {
             return `/news/${document._sys.filename}`;

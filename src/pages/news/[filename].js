@@ -8,8 +8,6 @@ import config from "../../../content/site.config.json";
 import Quote from "@/components/Quote";
 import InlineImage from "@/components/InlineImage";
 
-export const runtime = "edge";
-
 const components = {
   Quote: Quote,
   InlineImage: InlineImage,
@@ -117,23 +115,17 @@ export default function Page(props) {
 }
 
 export const getStaticProps = async ({ params }) => {
-  try {
-    const pageResponse = await client.queries.posts({
-      relativePath: `${params.filename}.mdx`,
-    });
+  const pageResponse = await client.queries.posts({
+    relativePath: `${params.filename}.mdx`,
+  });
 
-    return {
-      props: {
-        data: pageResponse.data,
-        query: pageResponse.query,
-        variables: pageResponse.variables,
-      },
-    };
-  } catch {
-    return {
-      notFound: true,
-    };
-  }
+  return {
+    props: {
+      data: pageResponse.data,
+      query: pageResponse.query,
+      variables: pageResponse.variables,
+    },
+  };
 };
 
 /**
@@ -149,6 +141,6 @@ export const getStaticPaths = async () => {
     paths: postsListData.data.postsConnection.edges.map((post) => ({
       params: { filename: post.node._sys.filename },
     })),
-    fallback: "blocking",
+    fallback: false,
   };
 };

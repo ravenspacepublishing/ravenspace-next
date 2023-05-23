@@ -8,8 +8,6 @@ import PubSlides from "@/components/PubSlides";
 import React from "react";
 import config from "../../../content/site.config.json";
 
-export const runtime = "edge";
-
 const LinkWrapper = ({ link, children }) => {
   return link ? (
     <Link href={link} target="_blank" rel="noopener noreferrer">
@@ -216,28 +214,22 @@ export default function Page(props) {
 }
 
 export const getStaticProps = async ({ params }) => {
-  try {
-    const pageResponse = await client.queries.publications({
-      relativePath: `${params.filename}.mdx`,
-    });
+  const pageResponse = await client.queries.publications({
+    relativePath: `${params.filename}.mdx`,
+  });
 
-    const publicationsResponse = await client.queries.home({
-      relativePath: "index.mdx",
-    });
+  const publicationsResponse = await client.queries.home({
+    relativePath: "index.mdx",
+  });
 
-    return {
-      props: {
-        publications: publicationsResponse.data.home.ourPublications,
-        data: pageResponse.data,
-        query: pageResponse.query,
-        variables: pageResponse.variables,
-      },
-    };
-  } catch {
-    return {
-      notFound: true,
-    };
-  }
+  return {
+    props: {
+      publications: publicationsResponse.data.home.ourPublications,
+      data: pageResponse.data,
+      query: pageResponse.query,
+      variables: pageResponse.variables,
+    },
+  };
 };
 
 /**
@@ -255,6 +247,6 @@ export const getStaticPaths = async () => {
         params: { filename: publication.node._sys.filename },
       })
     ),
-    fallback: "blocking",
+    fallback: false,
   };
 };

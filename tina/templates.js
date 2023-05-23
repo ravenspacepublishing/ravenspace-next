@@ -567,6 +567,7 @@ export function postFields() {
       type: "boolean",
       name: "draft",
       label: "Draft",
+      required: true,
     },
   ];
 }
