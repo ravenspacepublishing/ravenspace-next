@@ -63,9 +63,7 @@ export default function Page(props) {
             </h1>
             <div className="py-2 flex border-b-2">
               <time className="basis-4/5 md:basis-1/2 text-md lg:text-lg border-r-2 text-right pr-4">
-                {new Intl.DateTimeFormat("en-US", { dateStyle: "full" }).format(
-                  data.posts.date
-                )}
+                {new Date(data.posts.pubDate).toLocaleDateString()}
               </time>
               <p className="basis-1/2 pl-4 flex items-center gap-2">
                 <a

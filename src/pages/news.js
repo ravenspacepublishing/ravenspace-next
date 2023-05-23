@@ -64,7 +64,9 @@ export default function News(props) {
 }
 
 export const getStaticProps = async () => {
-  const postsResponse = await client.queries.postsConnection();
+  const postsResponse = await client.queries.postsConnection({
+    filter: { draft: { eq: false } },
+  });
 
   return {
     props: {
