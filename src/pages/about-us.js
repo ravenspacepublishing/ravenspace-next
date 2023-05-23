@@ -1,0 +1,133 @@
+import { useTina } from "tinacms/dist/react";
+import { client } from "../../tina/__generated__/client";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+import Card from "@/components/Card";
+import Link from "next/link";
+import Image from "next/image";
+import React from "react";
+
+const LinkWrapper = ({ link, children }) => {
+  return link ? (
+    <Link href={link} target="_blank" rel="noopener noreferrer">
+      {children}
+    </Link>
+  ) : (
+    <>{children}</>
+  );
+};
+
+const components = {
+  Card: Card,
+};
+
+export default function AboutUs(props) {
+  const { data } = useTina({
+    query: props.query,
+    variables: props.variables,
+    data: props.data,
+  });
+
+  return (
+    <main className="mt-20 lg:mt-24 grow flex flex-col">
+      <section className="bg-gray-100 pt-14 lg:pt-24 px-4">
+        <div className="pb-10 lg:w-2/3 lg:max-w-3xl lg:mx-auto">
+          <h1 className="uppercase text-3xl lg:text-5xl lg:font-semibold text-center mb-4 lg:mb-10 text-rs-purple">
+            About Us
+          </h1>
+          <p className="font-light lg:text-lg text-center">
+            {data.aboutUs.header}
+          </p>
+        </div>
+        <div className="pb-10 lg:pb-16 flex flex-wrap lg:max-w-6xl lg:mx-auto">
+          {data.aboutUs.partners.map((partner, index) => (
+            <div key={index} className="w-1/2 md:w-1/4 flex-none">
+              <div className="mx-1 lg:mx-5 my-1 lg:my-5 p-4 lg:p-2 bg-white shadow-2xl rounded-lg">
+                <LinkWrapper link={partner.link}>
+                  <Image
+                    src={partner.image}
+                    alt={`${partner.name} logo`}
+                    width="300"
+                    height="255"
+                  />
+                </LinkWrapper>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="px-4 bg-rs-purple">
+        <div className="flex flex-wrap items-center py-8 lg:max-w-6xl lg:mx-auto">
+          <div className="mb-4 lg:mb-0 mx-auto lg:w-1/3">
+            <Image
+              className="w-auto h-28 lg:h-52 mx-auto"
+              width="250"
+              height="208"
+              alt="RavenSpace logo"
+              src="/images/big-white-logo.png"
+            />
+          </div>
+          <p className="text-white lg:text-lg font-light lg:w-2/3">
+            {data.aboutUs.horiz}
+          </p>
+        </div>
+      </section>
+      <section className="mt-8 lg:mt-16 px-4 pb-10 lg:pb-16 bg-white">
+        <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl prose lg:prose-p:leading-8 lg:prose-p:text-lg">
+            <TinaMarkdown content={data.aboutUs.body} components={components} />
+          </div>
+        </div>
+      </section>
+      <section className="bg-gray-100 py-8 lg:py-14 px-4">
+        <h2 className="text-2xl lg:text-4xl text-center tracking-widest font-semibold mb-3 lg:mb-6">
+          CONTACT
+        </h2>
+        <p className="text-center lg:text-lg font-semibold mb-3">
+          For more information or to submit a proposal, contact:
+        </p>
+        <p className="font-light lg:text-lg text-center">
+          {data.aboutUs.contacts.map((contact, index) => (
+            <React.Fragment key={index}>
+              {contact.name}, {contact.position}:
+              <Link className="text-rs-purple" href={`mailto:${contact.email}`}>
+                {contact.email}
+              </Link>
+              <br />
+            </React.Fragment>
+          ))}
+        </p>
+        <div className="mt-6 mb-2 flex">
+          <Link
+            className="w-full max-w-xs text-center text-white lg:text-lg mx-auto py-2 bg-rs-purple rounded-sm"
+            href="/contact-us/"
+          >
+            Contact Us
+          </Link>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+export const getStaticProps = async () => {
+  const pageResponse = await client.queries.aboutUs({
+    relativePath: "index.mdx",
+  });
+
+  const pageData = pageResponse.data.aboutUs;
+
+  const meta = {
+    title: pageData.title,
+    description: pageData.description,
+    image: pageData.image ? pageData.image : "",
+  };
+
+  return {
+    props: {
+      data: pageResponse.data,
+      meta: meta,
+      query: pageResponse.query,
+      variables: pageResponse.variables,
+    },
+  };
+};

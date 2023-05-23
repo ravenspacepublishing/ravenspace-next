@@ -1,0 +1,86 @@
+{
+  "url": "https://www.ravenspacepublishing.org",
+  "base": "/",
+  "lang": "en",
+  "title": "RavenSpace",
+  "description": "",
+  "noIndex": false,
+  "googleAnalytics": "G-3W70HV439Q",
+  "theme": {
+    "themeColor": "#51416e",
+    "icon": {
+      "small": "/images/favicon-32.png",
+      "large": "/images/favicon-192.png",
+      "apple": "/images/touchicon-180.png"
+    },
+    "image": {
+      "src": "/images/meta_image.webp",
+      "alt": "RavenSpace logo",
+      "type": "image/webp",
+      "width": 1200,
+      "height": 630
+    },
+    "logo": {
+      "src": "/images/header-logo.svg",
+      "alt": "RavenSpace logo",
+      "width": 200,
+      "height": 80
+    },
+    "footer": {
+      "logo": {
+        "src": "/images/footer-logo.svg",
+        "alt": "RavenSpace where knowledge takes flight logo",
+        "width": 320,
+        "height": 91
+      },
+      "supporter": {
+        "name": "Mellon Foundation",
+        "link": "https://mellon.org",
+        "note": "RavenSpace was made possible thanks to generous support from the Mellon Foundation.",
+        "logo": {
+          "avif": "/images/Mellon_Footer.avif",
+          "png": "/images/Mellon_Footer.png"
+        }
+      },
+      "copyright": "© 2023 RavenSpace. All Rights Reserved."
+    }
+  },
+  "navigation": [
+    {
+      "title": "Home",
+      "href": "/",
+      "color": "#d6c0ff",
+      "hidden": false
+    },
+    {
+      "title": "Publish With Us",
+      "href": "/publish-with-us/",
+      "color": "#8d73b9",
+      "hidden": false
+    },
+    {
+      "title": "Publications",
+      "href": "/publications/as-i-remember-it/",
+      "color": "#6b509c",
+      "hidden": false
+    },
+    {
+      "title": "About Us",
+      "href": "/about-us",
+      "color": "#533982",
+      "hidden": false
+    },
+    {
+      "title": "News",
+      "href": "/news",
+      "color": "#d6c0ff",
+      "hidden": false
+    },
+    {
+      "title": "Contact Us",
+      "href": "/contact-us",
+      "color": "#8d73b9",
+      "hidden": false
+    }
+  ]
+}
