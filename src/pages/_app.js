@@ -5,6 +5,7 @@ import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import config from "../../content/site.config.json";
+import Script from "next/script";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -19,6 +20,23 @@ export default function App({ Component, pageProps }) {
         <link rel="canonical" href={`${config.url}${router.asPath}`} />
         <meta property="og:url" content={`${config.url}${router.asPath}`} />
       </Head>
+      {config.googleAnalytics && process.env.NODE_ENV == "production" && (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${config.googleAnalytics}`}
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag() { dataLayer.push(arguments); }
+              gtag('js', new Date());
+
+              gtag('config', '${config.googleAnalytics}');
+            `}
+          </Script>
+        </>
+      )}
       <header id="header" className="fixed bg-white w-full z-50 shadow">
         <div className="px-4 m-auto h-20 lg:h-24 flex flex-wrap max-w-screen-xl items-center">
           {/* Header Logo */}
@@ -171,21 +189,13 @@ export default function App({ Component, pageProps }) {
             >
               {config.theme.footer.copyright}
             </span>
-            <div>
-              <Link
-                className="text-white hover:underline"
-                href="/privacy-statement"
-              >
-                Privacy Statement
-              </Link>
-              <span> | </span>
-              <Link
-                className="text-white hover:underline"
-                href="/admin/index.html"
-              >
-                Admin
-              </Link>
-            </div>
+
+            <Link
+              className="text-white hover:underline"
+              href="/privacy-statement"
+            >
+              Privacy Statement
+            </Link>
           </div>
         </div>
       </footer>

@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import Image from "next/image";
 import config from "../../content/site.config.json";
 
 export default function Document() {
