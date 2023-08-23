@@ -4,9 +4,7 @@ import Image from "next/image";
 import config from "../../content/site.config.json";
 import HeroSlides from "@/components/HeroSlides";
 import PubSlides from "@/components/PubSlides";
-import Script from "next/script";
 import Head from "next/head";
-import { useEffect } from "react";
 
 export default function Home(props) {
   const { data } = useTina({
@@ -110,26 +108,6 @@ export default function Home(props) {
         <section className="w-full bg-gray-200 py-10 lg:px-8">
           <div className="lg:max-w-6xl lg:mx-auto lg:flex lg:gap-x-16">
             <PubSlides ourPublications={data.home.ourPublications} />
-            <Script
-              src="https://platform.twitter.com/widgets.js"
-              strategy="lazyOnload"
-              onReady={() => {
-                twttr.widgets.load(document.getElementById("twitterEmbed"));
-              }}
-            />
-            <div className="text-center h-auto max-w-xs lg:max-w-none mx-auto lg:mx-0 mt-10 lg:mt-0 lg:w-1/2 lg:order-2 lg:px-20 px-4 lg:flex-auto">
-              <a
-                id="twitterEmbed"
-                className="twitter-timeline"
-                data-width="100%"
-                data-height="631"
-                href="https://twitter.com/ravenspacepub?ref_src=twsrc%5Etfw"
-                data-dnt="true"
-                data-tweet-limit="5"
-              >
-                Tweets by ravenspacepub
-              </a>
-            </div>
           </div>
         </section>
       </main>
