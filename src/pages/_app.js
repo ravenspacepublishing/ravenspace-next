@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import Subscribe from "@/components/Subscribe";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import config from "../../content/site.config.json";
@@ -128,17 +129,18 @@ export default function App({ Component, pageProps }) {
         <div className="py-12 px-4 m-auto max-w-7xl flex flex-wrap lg:align-middle">
           {/* RavenSpace SVG Icon */}
           <div className="w-full lg:w-1/2 mb-7 lg:mb-0">
+            <Subscribe url="insert url here" />
+          </div>
+          <div className="w-full lg:w-1/2 -mb-7 lg:mb-0 lg:-ml-5 lg:-mr-8">
             <Image
-              className="w-full mx-auto lg:mx-0 max-w-xs h-auto"
+              className="w-full mx-auto max-w-xs h-auto"
               alt={config.theme.footer.logo.alt}
               src={config.theme.footer.logo.src}
               loading="lazy"
               width={config.theme.footer.logo.width}
               height={config.theme.footer.logo.height}
             />
-          </div>
-          <div className="w-full lg:w-1/2 -mb-7 lg:mb-0 lg:-ml-5 lg:-mr-8 lg:flex flex-nowrap">
-            <div className="w-64 mb-7 lg:mb-0 mx-auto lg:mx-2 text-center text-white text-xs font-light leading-5">
+            <div className="w-64 mb-7 mt-4 lg:mb-0 mx-auto text-center text-white text-xs font-light leading-5">
               <Link
                 className="inline-block mx-auto text-center"
                 href={config.theme.footer.supporter.link}
@@ -171,6 +173,7 @@ export default function App({ Component, pageProps }) {
               </Link>
               <p>{config.theme.footer.supporter.note}</p>
             </div>
+            {/*
             <div className="w-full md:w-5/12 mb-5 lg:mb-0 md:mx-auto lg:mx-5">
               <Link
                 className="cursor-pointer inline-block text-black hover:text-white text-center lg:text-lg py-2.5 px-6 text-base font-medium w-full relative bg-rs-light-purple hover:bg-rs-dark-purple rounded-sm"
@@ -179,6 +182,7 @@ export default function App({ Component, pageProps }) {
                 Contact Us
               </Link>
             </div>
+            */}
           </div>
         </div>
         <div className="max-w-full bg-rs-dark-purple">
