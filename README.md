@@ -35,4 +35,4 @@ Alternatively, content can be managed directly through this repository by editin
 
 ## Changing Page Styling and Structure
 
-To make more complex changes to the site, find the corresponding page that you would like to edit in the /src/pages/ directory. For example, if you would like to add an element to the site's home page, first open /src/pages/index.js in a code editor. Then find spot within the page's HTML (JSX) where you would like to add/modify an element. Modify styling using Tailwind utility classes in each element's className.
+To make more complex changes to the site, find the corresponding page that you would like to edit in the /src/pages/ directory. For example, if you would like to add an element to the site's home page, first open /src/pages/index.js in a code editor. Then find spot within the page's HTML (JSX) where you would like to add/modify an element. Elements that appear on all pages, like the header or footer, can be modified in /src/pages/\_app.js. Modify styling using Tailwind utility classes in each element's className.
