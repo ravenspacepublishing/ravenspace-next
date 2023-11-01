@@ -1,9 +1,6 @@
 {
   "url": "https://www.ravenspacepublishing.org",
-  "base": "/",
-  "lang": "en",
   "title": "RavenSpace",
-  "description": "",
   "noIndex": false,
   "googleAnalytics": "G-3W70HV439Q",
   "theme": {
@@ -46,6 +43,10 @@
     }
   },
   "navigation": [
+    {
+      "title": "AAAs",
+      "hidden": true
+    },
     {
       "title": "Home",
       "href": "/",
