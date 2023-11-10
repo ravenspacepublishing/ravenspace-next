@@ -51,7 +51,7 @@ export default function ContactUs(props) {
                   Contact Us
                 </h2>
                 <p className="font-semibold mb-4">
-                  For more information or to submit a proposal, contact:
+                  For more information, please contact:
                 </p>
                 <div className="mb-6">
                   {data.contactUs.contacts.map((contact, index) => (
