@@ -50,9 +50,6 @@ export default function ContactUs(props) {
                 <h2 className="text-3xl lg:text-4xl uppercase mb-4 text-rs-purple">
                   Contact Us
                 </h2>
-                <!-- <p className="font-semibold mb-4">
-                  For more information, contact:
-                </p> -->
                 <div className="mb-6">
                   {data.contactUs.contacts.map((contact, index) => (
                     <p key={index} className="font-light lg:text-lg mb-2">
