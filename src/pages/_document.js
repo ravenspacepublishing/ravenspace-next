@@ -10,7 +10,7 @@ export default function Document() {
           <meta name="theme-color" content={config.theme.themeColor} />
         )}
         {config.noIndex && <meta name="robots" content="noindex, nofollow" />}
-        <meta property="og:image" content="/../public/images/rs-logo.png" />
+        <meta property="og:image" content="https://github.com/ravenspacepublishing/ravenspace-next/blob/main/public/images/rs-logo.png" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={config.title} />
         <meta name="twitter:card" content="summary_large_image" />
