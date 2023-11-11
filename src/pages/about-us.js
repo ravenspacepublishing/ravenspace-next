@@ -114,7 +114,7 @@ export default function AboutUs(props) {
             CONTACT
           </h2>
           <p className="text-center lg:text-lg font-semibold mb-3">
-            For more information, please contact:
+            For more information, contact:
           </p>
           <p className="font-light lg:text-lg text-center">
             {data.aboutUs.contacts.map((contact, index) => (
