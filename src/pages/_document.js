@@ -9,6 +9,7 @@ export default function Document() {
           <meta name="theme-color" content={config.theme.themeColor} />
         )}
         {config.noIndex && <meta name="robots" content="noindex, nofollow" />}
+        <html prefix="og: http://ogp.me/ns#">
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={config.title} />
         <meta name="twitter:card" content="summary_large_image" />
