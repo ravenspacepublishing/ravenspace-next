@@ -110,27 +110,6 @@ export default function AboutUs(props) {
           </div>
         </section>
         <section className="bg-gray-100 py-8 lg:py-14 px-4">
-          <h2 className="text-2xl lg:text-4xl text-center tracking-widest font-semibold mb-3 lg:mb-6">
-            CONTACT
-          </h2>
-          <p className="text-center lg:text-lg font-semibold mb-3">
-            For more information, contact:
-          </p>
-          <p className="font-light lg:text-lg text-center">
-            {data.aboutUs.contacts.map((contact, index) => (
-              <React.Fragment key={index}>
-                {contact.name}, {contact.position}:
-                <Link
-                  className="text-rs-purple"
-                  href={`mailto:${contact.email}`}
-                >
-                  {contact.email}
-                </Link>
-                <br />
-              </React.Fragment>
-            ))}
-          </p>
-          <div className="mt-6 mb-2 flex">
             <Link
               className="w-full max-w-xs text-center text-white lg:text-lg mx-auto py-2 bg-rs-purple rounded-sm"
               href="/contact-us/"
