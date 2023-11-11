@@ -63,7 +63,7 @@ export default function ContactUs(props) {
                       </Link>
                     </p>
                   ))}
-                </div>
+                 </div>
                 <div className="font-light mb-4">
                   <address
                     className="not-italic"
