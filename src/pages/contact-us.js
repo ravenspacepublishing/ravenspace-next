@@ -50,6 +50,12 @@ export default function ContactUs(props) {
                 <h2 className="text-3xl lg:text-4xl uppercase mb-4 text-rs-purple">
                   Contact Us
                 </h2>
+                <div className="font-light mb-4">
+                  <address
+                    className="not-italic"
+                    dangerouslySetInnerHTML={{ __html: data.contactUs.address }}
+                  />
+                </div>
                 <div className="flex items-center font-light mb-2">
                   <svg
                     style={{ fill: "#51416e" }}
