@@ -2,8 +2,8 @@ import { useTina } from "tinacms/dist/react";
 import { client } from "../../tina/__generated__/client";
 import Image from "next/image";
 import config from "../../content/site.config.json";
-import HeroSlides from "@/components/HeroSlides";
-import PubSlides from "@/components/PubSlides";
+import HeroSlides from "../components/HeroSlides";
+import PubSlides from "../components/PubSlides";
 import Head from "next/head";
 
 export default function Home(props) {
