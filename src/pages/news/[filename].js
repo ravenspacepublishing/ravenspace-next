@@ -5,8 +5,8 @@ import { client } from "../../../tina/__generated__/client";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { useRouter } from "next/router";
 import config from "../../../content/site.config.json";
-import Quote from "@/components/Quote";
-import InlineImage from "@/components/InlineImage";
+import Quote from "../../components/Quote";
+import InlineImage from "../../components/InlineImage";
 
 const components = {
   Quote: Quote,
