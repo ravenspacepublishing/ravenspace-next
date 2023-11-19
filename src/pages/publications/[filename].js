@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../../../tina/__generated__/client";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import PubSlides from "../components/PubSlides";
+import PubSlides from "../../components/PubSlides";
 import React from "react";
-import config from "../../content/site.config.json";
+import config from "../../../content/site.config.json";
 
 const LinkWrapper = ({ link, children }) => {
   return link ? (
