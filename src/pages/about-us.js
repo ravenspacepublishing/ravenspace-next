@@ -1,7 +1,7 @@
 import { useTina } from "tinacms/dist/react";
 import { client } from "../../tina/__generated__/client";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import Card from "@/components/Card";
+import Card from "../components/Card";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
