@@ -1,7 +1,7 @@
 {
   "url": "https://www.ravenspacepublishing.org",
   "title": "RavenSpace",
-  "noIndex": false,
+  "noIndex": true,
   "googleAnalytics": "G-3W70HV439Q",
   "theme": {
     "themeColor": "#51416e",
