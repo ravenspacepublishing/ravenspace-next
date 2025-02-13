@@ -98,16 +98,6 @@ export default function Page(props) {
                   ))}
                 </blockquote>
               )}
-              {data.publications.pub_url && (
-                <div className="flex justify-center flex-wrap">
-                  <Link
-                    href={data.publications.pub_url}
-                    className="inline-block text-white py-2.5 px-20 text-center font-medium relative min-w-min mb-5 hover:shadow-2xl bg-rs-purple rounded-sm"
-                  >
-                    Available Here
-                  </Link>
-                </div>
-              )}
               <p className="font-light mb-7">
                 {data.publications.publisher && (
                   <>
