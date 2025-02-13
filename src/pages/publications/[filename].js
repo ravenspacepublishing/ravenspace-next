@@ -150,7 +150,7 @@ export default function Page(props) {
                     <em>
                       For the best experience with this publication, use the
                       latest version of your web browser. If you encounter a
-                      problem, you can&nbps; 
+                      problem, you can&nbsp; 
                       <Link
                         className="underline"
                         style={{ color: "#5050bc" }}
