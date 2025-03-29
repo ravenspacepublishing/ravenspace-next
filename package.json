@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tinacms/cli": "^1.5.31",
+    "@tinacms/cli": "^1.5.47",
     "autoprefixer": "^10.4.15",
     "eslint": "^8.53.0",
     "eslint-config-next": "^13.4.19",
