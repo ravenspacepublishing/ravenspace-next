@@ -58,7 +58,7 @@
       "title": "Publish With Us",
       "href": "/publish-with-us/",
       "color": "#8d73b9",
-      "hidden": false
+      "hidden": true
     },
     {
       "title": "Publications",
