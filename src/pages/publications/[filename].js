@@ -137,19 +137,6 @@ export default function Page(props) {
                       {data.publications.pub_url.replace("http://", "")}
                     </Link>
                     <br />
-                    <em>
-                      For the best experience with this publication, use the
-                      latest version of your web browser. If you encounter a
-                      problem, you can&nbsp; 
-                      <Link
-                        className="underline"
-                        style={{ color: "#5050bc" }}
-                        href="https://form.asana.com/?hash=0537f1d8a42ad2a26db924a039932b4b7765e4c2b68d94eec7b561382e6640ea&id=1161907274885479"
-                      >
-                        report it here
-                      </Link>
-                      .
-                    </em>
                   </>
                 )}
               </p>
