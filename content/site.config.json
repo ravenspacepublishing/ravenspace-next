@@ -82,7 +82,7 @@
       "title": "Contact Us",
       "href": "/contact-us",
       "color": "#8d73b9",
-      "hidden": false
+      "hidden": true
     }
   ]
 }
