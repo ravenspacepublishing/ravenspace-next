@@ -109,16 +109,6 @@ export default function AboutUs(props) {
             </div>
           </div>
         </section>
-        <section className="bg-gray-100 py-8 lg:py-14 px-4">
-         <div className="mt-6 mb-2 flex">      
-            <Link
-              className="w-full max-w-xs text-center text-white lg:text-lg mx-auto py-2 bg-rs-purple rounded-sm"
-              href="/contact-us/"
-            >
-              Contact Us
-            </Link>
-          </div>
-        </section>
       </main>
     </>
   );
